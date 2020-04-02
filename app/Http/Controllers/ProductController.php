@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\Product\ProdcutResource;
 use App\Model\Product;
+use Illuminate\Database\Eloquent\Collection;
+use App\Http\Resources\Product\ProdcutResourceShort;
 use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -15,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::all();
+        return ProdcutResourceShort::collection(Product::all());
     }
 
     /**
