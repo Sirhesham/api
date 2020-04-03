@@ -20,7 +20,7 @@ class ProdcutResourceShort extends JsonResource
             'discount' => $this->discount,
             'rating' => $this->reviews->count() > 0 ? round($this->reviews->sum('star') / $this->reviews->count(), 2) : 'No Rating yet',
             'href' => [
-                'reviews' => route('product.show', $this->id)
+                'reviews' => route('products.show', $this->id)
             ]
         ];
     }
